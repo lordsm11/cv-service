@@ -1,0 +1,29 @@
+entity Experience {
+	id Long,
+ 	title String,
+    location String,
+    fromDate String,
+    toDate String,
+    client String,
+    envTechnique String,
+    detail String,
+}
+
+entity Task {
+	id Long,
+	label String
+}
+
+entity Person {
+	id Long,
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String
+}
+
+relationship OneToMany {
+	Person{experience} to Experience,
+	Experience{task} to Task
+}
+
